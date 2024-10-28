@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fileorganizer-2000-pod
+  labels:
+    app: fileorganizer-2000
+spec:
+  automountServiceAccountToken: false
+  containers:
+    - name: fileorganizer-2000-container
+      image: fileorganizer-2000:20241028
+      ports:
+        - containerPort: 3000
+      volumeMounts:
+        - name: source-code
+          mountPath: /app/web
+      command: ["/bin/sh", "-c", "cd /app/web && npm run build:self-host && npm run start"]
+      resources:
+        requests:
+          cpu: "500m"
+          memory: "256Mi"
+          ephemeral-storage: "1Gi"
+        limits:
+          memory: "512Mi"
+          ephemeral-storage: "2Gi"
+  volumes:
+    - name: source-code
+      emptyDir: {}
