@@ -11,10 +11,12 @@ spec:
       image: fileorganizer-2000:20241028
       ports:
         - containerPort: 3000
-      volumeMounts:
-        - name: source-code
-          mountPath: /app/web
-      command: ["/bin/sh", "-c", "cd /app/web && npm run build:self-host && npm run start"]
+      env:
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: fo2k-secret
+              key: OPENAI_API_KEY
       resources:
         requests:
           cpu: "500m"
@@ -23,6 +25,3 @@ spec:
         limits:
           memory: "512Mi"
           ephemeral-storage: "2Gi"
-  volumes:
-    - name: source-code
-      emptyDir: {}
