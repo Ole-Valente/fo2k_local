@@ -8,7 +8,7 @@ spec:
   automountServiceAccountToken: false
   containers:
     - name: fileorganizer-2000-container
-      image: fileorganizer-2000:20241028
+      image: fo2k-backend:latest
       ports:
         - containerPort: 3000
           hostPort: 3001
