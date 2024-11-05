@@ -19,17 +19,17 @@ spec:
                name: fo2k-secret
                key: OPENAI_API_KEY
         - name: MODEL_FOLDERS
-          value: "llama3.2:latest"
+          value: "llama3.2"
         - name: MODEL_RELATIONSHIPS
-          value: "llama3.2:latest"
+          value: "llama3.2"
         - name: MODEL_TAGGING
-          value: "llama3.2:latest"
+          value: "llama3.2"
         - name: MODEL_NAME
-          value: "llama3.2:latest"
+          value: "llama3.2"
         - name: MODEL_TEXT
-          value: "llama3.2:latest"
+          value: "llama3.2"
         - name: MODEL_VISION
-          value: "llava-llama3:latest"
+          value: "llava-llama3"
         - name: OLLAMA_API_URL
           value: "http://host.docker.internal:11434/"
         - name: PORT
