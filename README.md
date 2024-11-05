@@ -7,6 +7,7 @@ This project is a self-hosted backend for the File Organizer 2000 Obsidian plugi
 - [Podman](https://podman.io/getting-started/installation)
 - [Kubernetes](https://kubernetes.io/docs/setup/) (optional)
 - [File Organizer 2000](https://github.com/different-ai/file-organizer-2000)
+- [Ollama server](https://ollama.com/) (optional)
 
 ## Building the Image
 
